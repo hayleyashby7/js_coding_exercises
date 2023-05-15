@@ -32,5 +32,17 @@ export function countSheep(arr) {
 
 export function hasMPostCode(person) {
 	if (person === undefined) throw new Error('person is required');
-	// Your code here!
+
+	if (person.address.postCode.charAt(0) === 'M') {
+		// Postcode starts with M
+
+		if (isNaN(person.address.postCode.charAt(1))) {
+			// Next character is a letter - not an M postcode
+			return false;
+		}
+		// Next character is a number - valid M postcode
+		else return true;
+	}
+	// Postcode does not start with M
+	else return false;
 }
