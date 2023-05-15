@@ -43,7 +43,18 @@ export function getSalePrice(originalPrice, reduction) {
 
 export function getMiddleCharacter(str) {
 	if (str === undefined) throw new Error('str is required');
-	// Add your code here!
+
+	// Get middle character
+	const middleChar = str.length / 2;
+
+	// Check has odd or even number of characters
+	if (str.length % 2 !== 0) {
+		// Odd, return middle character
+		return str.charAt(middleChar);
+	} else {
+		// Even, return middle 2 characters
+		return str.charAt(middleChar - 1) + str.charAt(middleChar);
+	}
 }
 
 export function reverseWord(word) {
