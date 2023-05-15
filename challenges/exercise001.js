@@ -101,5 +101,16 @@ export function getMeanScore(scores) {
 
 export function simpleFizzBuzz(n) {
 	if (n === undefined) throw new Error('n is required');
-	// Add your code here!
+
+	// Return fizzbuzz, fizz, buzz or n based on n's value
+	switch (true) {
+		case n % 3 === 0 && n % 5 === 0:
+			return 'fizzbuzz';
+		case n % 3 === 0:
+			return 'fizz';
+		case n % 5 === 0:
+			return 'buzz';
+		default:
+			return n;
+	}
 }
