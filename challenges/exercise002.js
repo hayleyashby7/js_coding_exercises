@@ -5,7 +5,10 @@ export function getFillings(sandwich) {
 
 export function isFromManchester(person) {
 	if (person === undefined) throw new Error('person is required');
-	// Your code here!
+
+	if (person.city === 'Manchester') {
+		return true;
+	} else return false;
 }
 
 export function getBusNumbers(people) {
