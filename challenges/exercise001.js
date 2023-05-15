@@ -25,7 +25,7 @@ export function addVAT(originalPrice, vatRate) {
 
 	// Calculate VAT
 	const VAT = (originalPrice / 100) * vatRate;
-	
+
 	// Round to 2 decimal places if required
 	return Math.round((originalPrice + VAT) * 100) / 100;
 }
@@ -33,7 +33,12 @@ export function addVAT(originalPrice, vatRate) {
 export function getSalePrice(originalPrice, reduction) {
 	if (originalPrice === undefined) throw new Error('originalPrice is required');
 	if (reduction === undefined) throw new Error('reduction is required');
-	// Add your code here!
+
+	// Calculate reduction
+	const reductionAmount = (originalPrice / 100) * reduction;
+
+	// Round to 2 decimal places if required
+	return Math.round((originalPrice - reductionAmount) * 100) / 100;
 }
 
 export function getMiddleCharacter(str) {
