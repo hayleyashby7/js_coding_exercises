@@ -14,7 +14,9 @@ export function capitalize(word) {
 export function generateInitials(firstName, lastName) {
 	if (firstName === undefined) throw new Error('firstName is required');
 	if (lastName === undefined) throw new Error('lastName is required');
-	// Add your code here!
+	const firstInitial = firstName.slice(0, 1).toUpperCase();
+	const lastInitial = lastName.slice(0, 1).toUpperCase();
+	return firstInitial + '.' + lastInitial;
 }
 
 export function addVAT(originalPrice, vatRate) {
