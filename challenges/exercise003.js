@@ -49,5 +49,10 @@ export function checkIngredients(menu, ingredient) {
 export function duplicateNumbers(arr1, arr2) {
 	if (arr1 === undefined) throw new Error('arr1 is required');
 	if (arr2 === undefined) throw new Error('arr2 is required');
-	// Your code here!
+
+	// Find the numbers which appear in both arrays
+	const duplicates = arr1.filter((n) => arr2.includes(n));
+
+	// Return the duplicates in ascending order, with only one instance of each number
+	return [...new Set(duplicates)].sort();
 }
