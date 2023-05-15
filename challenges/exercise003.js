@@ -10,7 +10,21 @@ export function getSquares(nums) {
 
 export function camelCaseWords(words) {
 	if (words === undefined) throw new Error('words is required');
-	// Your code here!
+
+	// For each word in array, format appropriately and add to camelCase string
+	let camelCase = '';
+
+	words.forEach((word, index) => {
+		if (index === 0) {
+			// First word should be lowercase
+			camelCase += word.toLowerCase();
+		} else {
+			// Remaining words are capitalised first letter and rest as lowercase
+			camelCase += word.slice(0, 1).toUpperCase() + word.slice(1).toLowerCase();
+		}
+	});
+
+	return camelCase;
 }
 
 export function getTotalSubjects(people) {
