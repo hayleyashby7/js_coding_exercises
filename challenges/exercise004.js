@@ -8,7 +8,9 @@ export function findSmallNums(nums) {
 export function findNamesBeginningWith(names, char) {
 	if (!names) throw new Error('names is required');
 	if (!char) throw new Error('char is required');
-	// Your code here
+
+	// Return an array of names that begin with the specified character
+	return names.filter((n) => n[0] === char);
 }
 
 export function findVerbs(words) {
