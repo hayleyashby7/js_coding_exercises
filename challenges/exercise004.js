@@ -10,14 +10,14 @@ export function findNamesBeginningWith(names, char) {
 	if (!char) throw new Error('char is required');
 
 	// Return an array of names that begin with the specified character
-	return names.filter((n) => n.startsWith(char));
+	return names.filter((name) => name.startsWith(char));
 }
 
 export function findVerbs(words) {
 	if (!words) throw new Error('words is required');
 
 	// Return an array of verbs (begin with 'to ')
-	return words.filter((w) => w.startsWith('to '));
+	return words.filter((word) => word.startsWith('to '));
 }
 
 export function getIntegers(nums) {
