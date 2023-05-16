@@ -51,5 +51,7 @@ export function findSentencesContaining(sentences, str) {
 
 export function getLongestSides(triangles) {
 	if (!triangles) throw new Error('triangles is required');
-	// Your code here
+
+	// Return an array of the longest side of for each triangle - will only ever be 3 sides so can use spread
+	return triangles.map((triangle) => Math.max(...triangle));
 }
