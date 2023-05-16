@@ -10,7 +10,7 @@ export function findNamesBeginningWith(names, char) {
 	if (!char) throw new Error('char is required');
 
 	// Return an array of names that begin with the specified character
-	return names.filter((n) => n[0] === char);
+	return names.filter((n) => n.startsWith(char));
 }
 
 export function findVerbs(words) {
