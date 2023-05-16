@@ -64,7 +64,8 @@ describe("getIntegers", () => {
     expect(getIntegers(nums)).toEqual([1, 1, 4, 9]);
     expect(getIntegers([])).toEqual([]);
     expect(getIntegers([4.9, 9.33, 12.4])).toEqual([]);
-  });
+		expect(getIntegers([5, 9.33, 12.4, 3])).toEqual([5, 3]);
+	});
 });
 
 describe("getCities", () => {
@@ -175,3 +176,4 @@ describe("getLongestSides", () => {
     expect(getLongestSides(data2)).toEqual([7, 9, 6, 13, 12]);
   });
 });
+

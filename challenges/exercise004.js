@@ -22,7 +22,9 @@ export function findVerbs(words) {
 
 export function getIntegers(nums) {
 	if (!nums) throw new Error('nums is required');
-	// Your code here
+
+	// Return an array of integers
+	return nums.filter((n) => Number.isInteger(n));
 }
 
 export function getCities(users) {
