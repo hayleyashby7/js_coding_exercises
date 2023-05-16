@@ -36,7 +36,9 @@ export function getCities(users) {
 
 export function getSquareRoots(nums) {
 	if (!nums) throw new Error('nums is required');
-	// Your code here
+
+	// Return an array of nums square roots rounded to 2 decimal places
+	return nums.map((n) => Math.round(Math.sqrt(n) * 100) / 100);
 }
 
 export function findSentencesContaining(sentences, str) {
