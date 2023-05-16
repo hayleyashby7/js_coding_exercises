@@ -2,20 +2,11 @@ export const findNextNumber = (nums, n) => {
 	if (nums === undefined) throw new Error('nums is required');
 	if (n === undefined) throw new Error('n is required');
 
-	// Get the index of n
 	const index = nums.indexOf(n);
 
-	switch (true) {
-		case index === -1:
-			// n is not found
-			return null;
-		case index === nums.length - 1:
-			// n is the last number in the array
-			return null;
-		default:
-			// return next value after n
-			return nums[index + 1];
-	}
+	// Return null if n is not found or is the last number in the array
+	if (index === -1 || index === nums.length - 1) return null;
+	else return nums[index + 1];
 };
 
 export const count1sand0s = (str) => {
