@@ -1,4 +1,4 @@
-import { sumMultiples, isValidDNA, getComplementaryDNA, isItPrime, createMatrix, areWeCovered } from '../src/exercise006.js';
+import { sumMultiples, isValidDNA, getComplementaryDNA, isItPrime, createMatrix, areWeCovered } from '../challenges/exercise006';
 
 describe('sumMultiples', () => {
 	test('returns the sum of any numbers which are a multiple of 3 or 5', () => {
