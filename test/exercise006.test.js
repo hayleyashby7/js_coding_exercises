@@ -22,4 +22,15 @@ describe('sumMultiples', () => {
 		// Assert
 		expect(result).toBe(expected);
 	});
+
+	test('returns 0 if the array is empty', () => {
+		// Arrange
+		const expected = 0;
+
+		// Act
+		const result = sumMultiples([]);
+
+		// Assert
+		expect(result).toBe(expected);
+	});
 });
