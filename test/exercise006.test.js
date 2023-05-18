@@ -11,4 +11,15 @@ describe('sumMultiples', () => {
 		// Assert
 		expect(result).toBe(expected);
 	});
+
+	test('returns 0 if no numbers are a multiple of 3 or 5', () => {
+		// Arrange
+		const expected = 0;
+
+		// Act
+		const result = sumMultiples([1, 2, 4]);
+
+		// Assert
+		expect(result).toBe(expected);
+	});
 });
