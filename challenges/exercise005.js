@@ -36,7 +36,7 @@ export const sumArrays = (arrs) => {
 
 export const arrShift = (arr) => {
 	if (arr === undefined) throw new Error('arr is required');
-	
+
 	if (arr.length >= 2) [arr[0], arr[arr.length - 1]] = [arr[arr.length - 1], arr[0]];
 
 	return arr;
@@ -45,7 +45,10 @@ export const arrShift = (arr) => {
 export const findNeedle = (haystack, searchTerm) => {
 	if (haystack === undefined) throw new Error('haystack is required');
 	if (searchTerm === undefined) throw new Error('searchTerm is required');
-	// Your code here!
+
+	const haystackValues = Object.values(haystack);
+
+	return haystackValues.some((value) => value.toString().toLowerCase().includes(searchTerm.toLowerCase()));
 };
 
 export const getWordFrequencies = (str) => {
