@@ -33,4 +33,17 @@ describe('sumMultiples', () => {
 		// Assert
 		expect(result).toBe(expected);
 	});
+
+	test('throws an error if arr is not undefined', () => {
+		// Arrange
+		const expected = 'arr is required';
+
+		// Act
+		function result() {
+			sumMultiples();
+		}
+
+		// Assert
+		expect(result).toThrow(expected);
+	});
 });
