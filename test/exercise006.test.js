@@ -125,6 +125,19 @@ describe('isValidDNA', () => {
 describe('getComplementaryDNA', () => {
 	test('returns the complementary base pairs', () => {
 		// Arrange
+		const expected = 'invalid DNA string';
+
+		// Act
+		function result() {
+			getComplementaryDNA('oops!');
+		}
+
+		// Assert
+		expect(result).toThrow(expected);
+	});
+
+	test('throws error if the provided string is not valid', () => {
+		// Arrange
 		const expected = 'TGAC';
 
 		// Act
