@@ -35,6 +35,7 @@ export const isValidDNA = (str) => {
  */
 export const getComplementaryDNA = (str) => {
 	if (str === undefined) throw new Error('str is required');
+	if (!isValidDNA(str)) throw new Error('invalid DNA string');
 
 	const DNA = {
 		A: 'T',
