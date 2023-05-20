@@ -53,11 +53,10 @@ export const getComplementaryDNA = (str) => {
  */
 export const isItPrime = (n) => {
 	if (n === undefined) throw new Error('n is required');
-	
+
 	// Cover edge cases first so we dont waste a for loop if not needed
-	if (n <= 1) return false;
-	if (n < 4) return true; 
-	if (n % 2 === 0) return false;
+	if (n === 2 || n === 3) return true;
+	if (n % 2 === 0 || n % 3 === 0 || n <= 1) return false;
 
 	for (let i = 5; i <= Math.sqrt(n); i += 2) {
 		if (n % i === 0) return false;
