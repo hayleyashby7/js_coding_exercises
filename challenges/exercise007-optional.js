@@ -8,6 +8,7 @@
  */
 export const sumDigits = (n) => {
 	if (n === undefined) throw new Error('n is required');
+	if (typeof n !== 'number') throw new Error('n must be a number');
 
 	if (n < 10) return n;
 	return [...n.toString()].reduce((a, b) => parseInt(a) + parseInt(b));
