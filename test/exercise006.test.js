@@ -250,4 +250,17 @@ describe('isItPrime', () => {
 		expect(result2).toBe(expected);
 		expect(result3).toBe(expected);
 	});
+
+	test('throws an error if n is not defined', () => {
+		// Arrange
+		const expected = 'n is required';
+
+		// Act
+		function result() {
+			isItPrime();
+		}
+
+		// Assert
+		expect(result).toThrow(expected);
+	});
 });
