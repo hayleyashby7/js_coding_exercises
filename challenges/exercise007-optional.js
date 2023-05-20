@@ -105,9 +105,11 @@ export const hexToRGB = (hexStr) => {
 	const hex = hexStr.replace('#', '');
 
 	// Need to account for 3 or 6 digit hex codes
-	const hexR = hex.length === 3 ? hex.slice(0, 1).repeat(2) : hex.slice(0, 2);
-	const hexG = hex.length === 3 ? hex.slice(1, 2).repeat(2) : hex.slice(2, 4);
-	const hexB = hex.length === 3 ? hex.slice(2, 3).repeat(2) : hex.slice(4, 6);
+	const short = hex.length === 3;
+	
+	const hexR = short ? hex.slice(0, 1).repeat(2) : hex.slice(0, 2);
+	const hexG = short ? hex.slice(1, 2).repeat(2) : hex.slice(2, 4);
+	const hexB = short ? hex.slice(2, 3).repeat(2) : hex.slice(4, 6);
 
 	const R = parseInt(hexR, 16);
 	const G = parseInt(hexG, 16);
