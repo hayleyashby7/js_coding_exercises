@@ -290,4 +290,17 @@ describe('hexToRGB', () => {
 		// Assert
 		expect(result).toBe(expected);
 	});
+
+	test('throws an error if no hex colour code is provided', () => {
+		// Arrange
+		const expected = 'hexStr is required';
+
+		// Act
+		const result = () => {
+			hexToRGB();
+		};
+
+		// Assert
+		expect(result).toThrow(expected);
+	});
 });
