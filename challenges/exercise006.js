@@ -25,7 +25,7 @@ export const isValidDNA = (str) => {
 	if (str === undefined) throw new Error('str is required');
 
 	let DNA = ['C', 'G', 'T', 'A'];
-	return [...str].every((char) => DNA.includes(char));
+	return [...str].every((char) => DNA.includes(char.toUpperCase()));
 };
 
 /**
