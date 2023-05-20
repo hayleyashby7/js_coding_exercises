@@ -379,4 +379,20 @@ describe('findWinner', () => {
 		// Assert
 		expect(result).toBe(expected);
 	});
+
+	test('takes board array and returns a diagonal winner', () => {
+		// Arrange
+		const board = [
+			['X', '0', '0'],
+			['0', 'X', 'X'],
+			['0', null, 'X'],
+		];
+		const expected = 'X';
+
+		// Act
+		const result = findWinner(board);
+
+		// Assert
+		expect(result).toBe(expected);
+	});
 });
