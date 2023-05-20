@@ -34,7 +34,7 @@ describe('sumMultiples', () => {
 		expect(result).toBe(expected);
 	});
 
-	test('throws an error if arr is not undefined', () => {
+	test('throws an error if arr is not defined', () => {
 		// Arrange
 		const expected = 'arr is required';
 
@@ -106,6 +106,19 @@ describe('isValidDNA', () => {
 
 		// Assert
 		expect(result).toBe(expected);
+	});
+
+	test('throws an error if string is not defined', () => {
+		// Arrange
+		const expected = 'str is required';
+
+		// Act
+		function result() {
+			isValidDNA();
+		}
+
+		// Assert
+		expect(result).toThrow(expected);
 	});
 });
 
