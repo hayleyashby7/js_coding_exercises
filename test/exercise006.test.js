@@ -355,4 +355,19 @@ describe('createMatrix', () => {
 		// Assert
 		expect(result).toEqual(expected);
 	});
+
+	test('returns a matrix array of n * n with fill being a number', () => { 
+		// Arrange
+		const expected = [
+			[1, 1, 1],
+			[1, 1, 1],
+			[1, 1, 1],
+		];
+
+		// Act
+		const result = createMatrix(3, 1);
+
+		// Assert
+		expect(result).toEqual(expected);
+	});
 });
