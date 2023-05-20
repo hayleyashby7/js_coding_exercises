@@ -36,4 +36,17 @@ describe('sumDigits', () => {
 		// Assert
 		expect(result).toBe(expected);
 	});
+
+	test('throws an error if no number is provided', () => {
+		// Arrange
+		const expected = 'n is required';
+
+		// Act
+		const result = () => {
+			sumDigits();
+		};
+
+		// Assert
+		expect(result).toThrow(expected);
+	});
 });
