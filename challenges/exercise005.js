@@ -4,7 +4,6 @@ export const findNextNumber = (nums, n) => {
 
 	const index = nums.indexOf(n);
 
-	// Return null if n is not found or is the last number in the array
 	if (index === -1 || index === nums.length - 1) return null;
 	else return nums[index + 1];
 };

@@ -20,7 +20,6 @@ export function countSheep(arr) {
 	if (arr === undefined) throw new Error('arr is required');
 	let numSheep = 0;
 
-	// Iterate through array and count number of sheep
 	arr.forEach((element) => {
 		if (element === 'sheep') numSheep++;
 	});
@@ -32,9 +31,8 @@ export function hasMPostCode(person) {
 	if (person === undefined) throw new Error('person is required');
 
 	if (person.address.postCode.startsWith('M')) {
-		// Postcode starts with M - is there a letter or number next?
+		// Postcode format varies, check if there a letter or number next?
 		return !isNaN(person.address.postCode.charAt(1));
 	}
-	// Postcode does not start with M
 	else return false;
 }

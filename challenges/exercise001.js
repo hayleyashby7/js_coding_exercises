@@ -23,10 +23,9 @@ export function addVAT(originalPrice, vatRate) {
 	if (originalPrice === undefined) throw new Error('originalPrice is requied');
 	if (vatRate === undefined) throw new Error('vatRate is required');
 
-	// Calculate VAT
 	const VAT = (originalPrice / 100) * vatRate;
 
-	// Round to 2 decimal places if required
+	// Round to 2 decimal places as currency
 	return Math.round((originalPrice + VAT) * 100) / 100;
 }
 
@@ -34,10 +33,9 @@ export function getSalePrice(originalPrice, reduction) {
 	if (originalPrice === undefined) throw new Error('originalPrice is required');
 	if (reduction === undefined) throw new Error('reduction is required');
 
-	// Calculate reduction
 	const reductionAmount = (originalPrice / 100) * reduction;
 
-	// Round to 2 decimal places if required
+	// Round to 2 decimal places as currency
 	return Math.round((originalPrice - reductionAmount) * 100) / 100;
 }
 
@@ -47,12 +45,9 @@ export function getMiddleCharacter(str) {
 	// Get middle character
 	const middleChar = str.length / 2;
 
-	// Check has odd or even number of characters
 	if (str.length % 2 !== 0) {
-		// Odd, return middle character
 		return str.charAt(middleChar);
 	} else {
-		// Even, return middle 2 characters
 		return str.charAt(middleChar - 1) + str.charAt(middleChar);
 	}
 }
@@ -65,7 +60,7 @@ export function reverseWord(word) {
 
 export function reverseAllWords(words) {
 	if (words === undefined) throw new Error('words is required');
-	// Iterate through array and reverse each word
+
 	return words.map((word) => reverseWord(word));
 }
 
@@ -74,7 +69,6 @@ export function countLinuxUsers(users) {
 
 	let linuxUsers = 0;
 
-	// Loop through users array and count Linux users
 	users.forEach((user) => {
 		if (user.type === 'Linux') linuxUsers++;
 	});
@@ -85,17 +79,14 @@ export function countLinuxUsers(users) {
 export function getMeanScore(scores) {
 	if (scores === undefined) throw new Error('scores is required');
 
-	// Calculate mean of scores provided
 	const mean = scores.reduce((a, b) => a + b, 0) / scores.length;
 
-	// Round to 2 decimal places if required
 	return Math.round(mean * 100) / 100;
 }
 
 export function simpleFizzBuzz(n) {
 	if (n === undefined) throw new Error('n is required');
 
-	// Return fizzbuzz, fizz, buzz or n based on n's value
 	switch (true) {
 		case n % 3 === 0 && n % 5 === 0:
 			return 'fizzbuzz';
