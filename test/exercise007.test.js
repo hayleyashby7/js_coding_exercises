@@ -131,5 +131,20 @@ describe('createRange', () => {
 
 		// Assert
 		expect(result).toThrow(expected);
-	});
+    });
+    
+    test('throws an error if start is greater than end', () => { 
+        // Arrange
+        const start = 11;
+        const end = 3;
+        const expected = 'start must be less than end';
+
+        // Act
+        const result = () => {
+            createRange(start, end);
+        };
+
+        // Assert
+        expect(result).toThrow(expected);
+    });
 });
