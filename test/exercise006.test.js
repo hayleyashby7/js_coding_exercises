@@ -216,4 +216,23 @@ describe('isItPrime', () => {
 		// Assert
 		expect(result).toBe(expected);
 	});
+
+	test('edge cases where the number is not a prime number', () => {
+		// Arrange
+		const expected = false;
+
+		// Act
+		const result = isItPrime(0);
+		const result2 = isItPrime(1);
+		const result3 = isItPrime(4);
+		const result4 = isItPrime(0.25);
+		const result5 = isItPrime(-1);
+
+		// Assert
+		expect(result).toBe(expected);
+		expect(result2).toBe(expected);
+		expect(result3).toBe(expected);
+		expect(result4).toBe(expected);
+		expect(result5).toBe(expected);
+	});
 });
