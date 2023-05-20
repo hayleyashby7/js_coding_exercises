@@ -330,3 +330,21 @@ describe('hexToRGB', () => {
 		expect(result).toBe(expected);
 	});
 });
+
+describe('findWinner', () => {
+	test('takes board array and returns a winner', () => {
+		// Arrange
+		const board = [
+			['X', '0', null],
+			['X', null, '0'],
+			['X', null, '0'],
+		];
+		const expected = 'X';
+
+		// Act
+		const result = findWinner(board);
+
+		// Assert
+		expect(result).toBe(expected);
+	});
+});
