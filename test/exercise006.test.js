@@ -395,4 +395,27 @@ describe('areWeCovered', () => {
 		expect(result1).toBe(expected);
 		expect(result2).toBe(expected);
 	});
+
+	test('returns false if there are less than 3 staff scheduled to work on the given day', () => {
+		// Arrange
+		const expected = false;
+		const staff = [
+			{ name: 'Sally', rota: ['Monday', 'Tuesday', 'Friday'] },
+			{ name: 'Pedro', rota: ['Saturday', 'Sunday', 'Tuesday', 'Wednesday'] },
+			{ name: 'Hayley', rota: ['Monday', 'Tuesday', 'Friday'] },
+			{ name: 'Felix', rota: ['Monday', 'Tuesday', 'Friday'] },
+			{ name: 'Alasdair', rota: ['Monday', 'Tuesday', 'Friday'] },
+			{ name: 'Matilda', rota: ['Monday', 'Tuesday', 'Friday', 'Saturday'] },
+		];
+
+		// Act
+		const result0 = areWeCovered(staff, 'Wednesday');
+		const result1 = areWeCovered(staff, 'Saturday');
+		const result2 = areWeCovered(staff, 'Sunday');
+
+		// Assert
+		expect(result0).toBe(expected);
+		expect(result1).toBe(expected);
+		expect(result2).toBe(expected);
+	});
 });
