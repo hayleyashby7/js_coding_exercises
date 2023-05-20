@@ -167,6 +167,7 @@ describe('getScreentimeAlertList', () => {
 				username: 'sam_j_1989',
 				name: 'Sam Jones',
 				screenTime: [
+					{ date: '2019-05-04', usage: { twitter: 100, instagram: 60, facebook: 101 } },
 					{ date: '2019-06-11', usage: { mapMyRun: 0, whatsApp: 0, facebook: 0, safari: 10 } },
 					{ date: '2019-06-13', usage: { mapMyRun: 0, whatsApp: 0, facebook: 0, safari: 16 } },
 					{ date: '2019-06-14', usage: { mapMyRun: 0, whatsApp: 0, facebook: 0, safari: 31 } },
@@ -174,7 +175,7 @@ describe('getScreentimeAlertList', () => {
 			},
 		];
 		const date = '2019-05-04';
-		const expected = ['beth_1234'];
+		const expected = ['beth_1234', 'sam_j_1989'];
 
 		// Act
 		const result = getScreentimeAlertList(users, date);
