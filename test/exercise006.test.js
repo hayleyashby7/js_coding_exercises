@@ -280,4 +280,17 @@ describe('createMatrix', () => {
 		// Assert
 		expect(result).toEqual(expected);
 	});
+
+	test('throws an error if n is not defined', () => {
+		// Arrange
+		const expected = 'n is required';
+
+		// Act
+		function result() {
+			createMatrix();
+		}
+
+		// Assert
+		expect(result).toThrow(expected);
+	});
 });
