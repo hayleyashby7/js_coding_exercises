@@ -277,3 +277,17 @@ describe('getScreentimeAlertList', () => {
 		expect(result).toThrow(expected);
 	});
 });
+
+describe('hexToRGB', () => {
+	test('takes a hex colour code and returns an RGB colour code', () => {
+		// Arrange
+		const hex = '#FF1133';
+		const expected = 'rgb(255,17,51)';
+
+		// Act
+		const result = hexToRGB(hex);
+
+		// Assert
+		expect(result).toBe(expected);
+	});
+});
