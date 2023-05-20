@@ -303,4 +303,18 @@ describe('hexToRGB', () => {
 		// Assert
 		expect(result).toThrow(expected);
 	});
+
+	test('throws an error if an invalid hex colour code is provided', () => {
+		// Arrange
+		const hex = '#FF113';
+		const expected = 'hexStr must be a valid hex colour code';
+
+		// Act
+		const result = () => {
+			hexToRGB(hex);
+		};
+
+		// Assert
+		expect(result).toThrow(expected);
+	});
 });
