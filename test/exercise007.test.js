@@ -420,4 +420,17 @@ describe('findWinner', () => {
 		// Assert
 		expect(result).toBe(expected);
 	});
+
+	test('throws an error if no board is provided', () => {
+		// Arrange
+		const expected = 'board is required';
+
+		// Act
+		const result = () => {
+			findWinner();
+		};
+
+		// Assert
+		expect(result).toThrow(expected);
+	});
 });
