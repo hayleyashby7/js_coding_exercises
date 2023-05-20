@@ -98,6 +98,10 @@ export const getScreentimeAlertList = (users, date) => {
 export const hexToRGB = (hexStr) => {
 	if (hexStr === undefined) throw new Error('hexStr is required');
 
+	const hexRegEx = /^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$/;
+
+	if (!hexRegEx.test(hexStr)) throw new Error('hexStr must be a valid hex colour code');
+
 	// Clean and slice hex to make it easier to work with
 	const hex = hexStr.replace('#', '');
 	const hexR = hex.slice(0, 2);
