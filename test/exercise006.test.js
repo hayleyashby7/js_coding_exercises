@@ -157,4 +157,15 @@ describe('getComplementaryDNA', () => {
 		// Assert
 		expect(result).toBe(expected);
 	});
+
+	test('returns the complementary base pairs for very long DNA string', () => {
+		// Arrange
+		const expected = 'ATTAGTGCGCGCGTATTTAATCACGCGCGCATAATAATCACGCGCGCATAAATTAGTGCGCGCGTATT';
+
+		// Act
+		const result = getComplementaryDNA('TAATCACGCGCGCATAAATTAGTGCGCGCGTATTATTAGTGCGCGCGTATTTAATCACGCGCGCATAA');
+
+		// Assert
+		expect(result).toBe(expected);
+	});
 });
