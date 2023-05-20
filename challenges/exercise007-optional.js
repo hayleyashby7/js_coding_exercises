@@ -27,7 +27,7 @@ export const sumDigits = (n) => {
 export const createRange = (start, end, step = 1) => {
 	if (start === undefined) throw new Error('start is required');
 	if (end === undefined) throw new Error('end is required');
-	if(start > end) throw new Error('start must be less than end');
+	if (start > end) throw new Error('start must be less than end');
 
 	const range = [];
 
@@ -70,6 +70,19 @@ export const createRange = (start, end, step = 1) => {
 export const getScreentimeAlertList = (users, date) => {
 	if (users === undefined) throw new Error('users is required');
 	if (date === undefined) throw new Error('date is required');
+
+	const userNames = [];
+
+	users.forEach((user) => {
+		const screenTimeOnDay = user.screenTime.find((day) => day.date === date);
+
+		if (screenTimeOnDay) {
+			const usageTotal = Object.values(screenTimeOnDay.usage).reduce((a, b) => a + b);
+			if (usageTotal > 100) userNames.push(user.username);
+		}
+	});
+
+	return userNames;
 };
 
 /**
