@@ -418,4 +418,17 @@ describe('areWeCovered', () => {
 		expect(result1).toBe(expected);
 		expect(result2).toBe(expected);
 	});
+
+	test('throws an error if staff is not defined', () => { 
+		// Arrange
+		const expected = 'staff is required';
+
+		// Act
+		function result() {
+			areWeCovered();
+		}
+
+		// Assert
+		expect(result).toThrow(expected);
+	});
 });
