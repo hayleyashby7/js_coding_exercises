@@ -146,4 +146,15 @@ describe('getComplementaryDNA', () => {
 		// Assert
 		expect(result).toBe(expected);
 	});
+
+	test('returns the complementary base pairs for single character DNA string', () => {
+		// Arrange
+		const expected = 'A';
+
+		// Act
+		const result = getComplementaryDNA('T');
+
+		// Assert
+		expect(result).toBe(expected);
+	});
 });
