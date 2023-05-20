@@ -235,4 +235,19 @@ describe('isItPrime', () => {
 		expect(result4).toBe(expected);
 		expect(result5).toBe(expected);
 	});
+
+	test('edge cases where the number is a prime number', () => {
+		// Arrange
+		const expected = true;
+
+		// Act
+		const result = isItPrime(2);
+		const result2 = isItPrime(3);
+		const result3 = isItPrime(5);
+
+		// Assert
+		expect(result).toBe(expected);
+		expect(result2).toBe(expected);
+		expect(result3).toBe(expected);
+	});
 });
