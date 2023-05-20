@@ -463,4 +463,23 @@ describe('areWeCovered', () => {
 		// Assert
 		expect(result).toBe(expected);
 	});
+
+	test('returns false if day is not one of the days in the rota', () => { 
+		// Arrange
+		const expected = false;
+		const staff = [
+			{ name: 'Sally', rota: ['Monday', 'Tuesday', 'Friday'] },
+			{ name: 'Pedro', rota: ['Saturday', 'Sunday', 'Tuesday', 'Wednesday'] },
+			{ name: 'Hayley', rota: ['Monday', 'Tuesday', 'Friday'] },
+			{ name: 'Felix', rota: ['Monday', 'Tuesday', 'Friday'] },
+			{ name: 'Alasdair', rota: ['Monday', 'Tuesday', 'Friday'] },
+			{ name: 'Matilda', rota: ['Monday', 'Tuesday', 'Friday', 'Saturday'] },
+		];
+
+		// Act
+		const result = areWeCovered(staff, 'Thursday');
+
+		// Assert
+		expect(result).toBe(expected);
+	});
 });
