@@ -131,20 +131,55 @@ describe('createRange', () => {
 
 		// Assert
 		expect(result).toThrow(expected);
-    });
-    
-    test('throws an error if start is greater than end', () => { 
-        // Arrange
-        const start = 11;
-        const end = 3;
-        const expected = 'start must be less than end';
+	});
 
-        // Act
-        const result = () => {
-            createRange(start, end);
-        };
+	test('throws an error if start is greater than end', () => {
+		// Arrange
+		const start = 11;
+		const end = 3;
+		const expected = 'start must be less than end';
 
-        // Assert
-        expect(result).toThrow(expected);
-    });
+		// Act
+		const result = () => {
+			createRange(start, end);
+		};
+
+		// Assert
+		expect(result).toThrow(expected);
+	});
+});
+
+describe('getScreentimeAlertList', () => {
+	test('returns an array of usernames who have used more than 100 minutes of screentime for a given date', () => {
+		// Arrange
+		const users = [
+			{
+				username: 'beth_1234',
+				name: 'Beth Smith',
+				screenTime: [
+					{ date: '2019-05-01', usage: { twitter: 34, instagram: 22, facebook: 40 } },
+					{ date: '2019-05-02', usage: { twitter: 56, instagram: 40, facebook: 31 } },
+					{ date: '2019-05-03', usage: { twitter: 12, instagram: 15, facebook: 19 } },
+					{ date: '2019-05-04', usage: { twitter: 10, instagram: 56, facebook: 61 } },
+				],
+			},
+			{
+				username: 'sam_j_1989',
+				name: 'Sam Jones',
+				screenTime: [
+					{ date: '2019-06-11', usage: { mapMyRun: 0, whatsApp: 0, facebook: 0, safari: 10 } },
+					{ date: '2019-06-13', usage: { mapMyRun: 0, whatsApp: 0, facebook: 0, safari: 16 } },
+					{ date: '2019-06-14', usage: { mapMyRun: 0, whatsApp: 0, facebook: 0, safari: 31 } },
+				],
+			},
+		];
+		const date = '2019-05-04';
+		const expected = ['beth_1234'];
+
+		// Act
+		const result = getScreentimeAlertList(users, date);
+
+		// Assert
+		expect(result).toEqual(expected);
+	});
 });
