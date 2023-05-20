@@ -106,7 +106,7 @@ export const hexToRGB = (hexStr) => {
 
 	// Need to account for 3 or 6 digit hex codes
 	const short = hex.length === 3;
-	
+
 	const hexR = short ? hex.slice(0, 1).repeat(2) : hex.slice(0, 2);
 	const hexG = short ? hex.slice(1, 2).repeat(2) : hex.slice(2, 4);
 	const hexB = short ? hex.slice(2, 3).repeat(2) : hex.slice(4, 6);
@@ -130,4 +130,20 @@ export const hexToRGB = (hexStr) => {
  */
 export const findWinner = (board) => {
 	if (board === undefined) throw new Error('board is required');
+	const dimensions = board.length;
+
+	// Check rows
+	board.forEach((row) => {
+		const rowWinner = row.every((cell) => cell === row[0]);
+		if (rowWinner) return row[0];
+	});
+
+	// Check columns
+	for (let i = 0; i < dimensions; i++) {
+		const column = board.map((row) => row[i]);
+		const columnWinner = column.every((cell) => cell === column[0]);
+		if (columnWinner) return column[0];
+	}
+
+	return null;
 };
