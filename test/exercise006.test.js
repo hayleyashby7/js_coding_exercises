@@ -108,3 +108,16 @@ describe('isValidDNA', () => {
 		expect(result).toBe(expected);
 	});
 });
+
+describe('getComplementaryDNA', () => {
+	test('returns the complementary base pairs', () => {
+		// Arrange
+		const expected = 'TGAC';
+
+		// Act
+		const result = getComplementaryDNA('ACTG');
+
+		// Assert
+		expect(result).toBe(expected);
+	});
+});
