@@ -12,4 +12,16 @@ describe('sumDigits', () => {
 		// Assert
 		expect(result).toBe(expected);
 	});
+
+	test('takes a single digit number and returns the number', () => {
+		// Arrange
+		const num = 5;
+		const expected = 5;
+
+		// Act
+		const result = sumDigits(num);
+
+		// Assert
+		expect(result).toBe(expected);
+	});
 });
