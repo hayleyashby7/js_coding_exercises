@@ -59,4 +59,19 @@ describe('isValidDNA', () => {
 		// Assert
 		expect(result).toBe(expected);
 	});
+
+	test('returns true if the string contains C, G, T or A in any order', () => {
+		// Arrange
+		const expected = true;
+
+		// Act
+		const alphabetical = isValidDNA('ACGT');
+		const reverseAlphabetical = isValidDNA('TGCA');
+		const random = isValidDNA('GATC');
+
+		// Assert
+		expect(alphabetical).toBe(expected);
+		expect(reverseAlphabetical).toBe(expected);
+		expect(random).toBe(expected);
+	});
 });
