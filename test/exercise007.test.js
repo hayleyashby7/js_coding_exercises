@@ -347,4 +347,20 @@ describe('findWinner', () => {
 		// Assert
 		expect(result).toBe(expected);
 	});
+
+	test('takes board array and returns a row winner', () => {
+		// Arrange
+		const board = [
+			['X', 'X', 'X'],
+			['0', null, '0'],
+			['X', null, '0'],
+		];
+		const expected = 'X';
+
+		// Act
+		const result = findWinner(board);
+
+		// Assert
+		expect(result).toBe(expected);
+	});
 });

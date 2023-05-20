@@ -131,19 +131,20 @@ export const hexToRGB = (hexStr) => {
 export const findWinner = (board) => {
 	if (board === undefined) throw new Error('board is required');
 	const dimensions = board.length;
+	let winner = null;
 
 	// Check rows
 	board.forEach((row) => {
 		const rowWinner = row.every((cell) => cell === row[0]);
-		if (rowWinner) return row[0];
+		if (rowWinner) return (winner = row[0]);
 	});
 
 	// Check columns
 	for (let i = 0; i < dimensions; i++) {
 		const column = board.map((row) => row[i]);
 		const columnWinner = column.every((cell) => cell === column[0]);
-		if (columnWinner) return column[0];
+		if (columnWinner) return (winner = column[0]);
 	}
 
-	return null;
+	return winner;
 };
