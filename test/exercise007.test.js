@@ -182,4 +182,37 @@ describe('getScreentimeAlertList', () => {
 		// Assert
 		expect(result).toEqual(expected);
 	});
+
+	test('returns an empty array if no users have used more than 100 minutes of screentime for a given date', () => {
+		// Arrange
+		const users = [
+			{
+				username: 'beth_1234',
+				name: 'Beth Smith',
+				screenTime: [
+					{ date: '2019-05-01', usage: { twitter: 3, instagram: 2, facebook: 4 } },
+					{ date: '2019-05-02', usage: { twitter: 5, instagram: 4, facebook: 3 } },
+					{ date: '2019-05-03', usage: { twitter: 1, instagram: 1, facebook: 1 } },
+					{ date: '2019-05-04', usage: { twitter: 1, instagram: 5, facebook: 6 } },
+				],
+			},
+			{
+				username: 'sam_j_1989',
+				name: 'Sam Jones',
+				screenTime: [
+					{ date: '2019-06-11', usage: { mapMyRun: 0, whatsApp: 0, facebook: 0, safari: 1 } },
+					{ date: '2019-06-13', usage: { mapMyRun: 0, whatsApp: 0, facebook: 0, safari: 1 } },
+					{ date: '2019-06-14', usage: { mapMyRun: 0, whatsApp: 0, facebook: 0, safari: 3 } },
+				],
+			},
+		];
+		const date = '2019-05-04';
+		const expected = [];
+
+		// Act
+		const result = getScreentimeAlertList(users, date);
+
+		// Assert
+		expect(result).toEqual(expected);
+	});
 });
