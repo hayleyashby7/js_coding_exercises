@@ -419,13 +419,34 @@ describe('areWeCovered', () => {
 		expect(result2).toBe(expected);
 	});
 
-	test('throws an error if staff is not defined', () => { 
+	test('throws an error if staff is not defined', () => {
 		// Arrange
 		const expected = 'staff is required';
 
 		// Act
 		function result() {
 			areWeCovered();
+		}
+
+		// Assert
+		expect(result).toThrow(expected);
+	});
+
+	test('throws an error if day is not defined', () => {
+		// Arrange
+		const expected = 'day is required';
+		const staff = [
+			{ name: 'Sally', rota: ['Monday', 'Tuesday', 'Friday'] },
+			{ name: 'Pedro', rota: ['Saturday', 'Sunday', 'Tuesday', 'Wednesday'] },
+			{ name: 'Hayley', rota: ['Monday', 'Tuesday', 'Friday'] },
+			{ name: 'Felix', rota: ['Monday', 'Tuesday', 'Friday'] },
+			{ name: 'Alasdair', rota: ['Monday', 'Tuesday', 'Friday'] },
+			{ name: 'Matilda', rota: ['Monday', 'Tuesday', 'Friday', 'Saturday'] },
+		];
+
+		// Act
+		function result() {
+			areWeCovered(staff);
 		}
 
 		// Assert
