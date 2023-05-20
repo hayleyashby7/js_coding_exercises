@@ -205,4 +205,15 @@ describe('isItPrime', () => {
 		// Assert
 		expect(result).toBe(expected);
 	});
+
+	test('returns false if the number is not a prime number', () => {
+		// Arrange
+		const expected = false;
+
+		// Act
+		const result = isItPrime(6);
+
+		// Assert
+		expect(result).toBe(expected);
+	});
 });
