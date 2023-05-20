@@ -387,24 +387,37 @@ describe('findWinner', () => {
 			['0', 'X', 'X'],
 			['0', null, 'X'],
 		];
-        const expectedLeft = 'X';
-        
-        const boardRight = [
-            ['0', '0', 'X'],
-            ['0', 'X', 'X'],
-            ['X', null, '0'],
-        ];
-        const expectedRight = 'X';
+		const expectedLeft = 'X';
 
+		const boardRight = [
+			['0', '0', 'X'],
+			['0', 'X', 'X'],
+			['X', null, '0'],
+		];
+		const expectedRight = 'X';
 
 		// Act
-        const resultLeft = findWinner(boardLeft);
-        const resultRight = findWinner(boardRight);
+		const resultLeft = findWinner(boardLeft);
+		const resultRight = findWinner(boardRight);
 
 		// Assert
-        expect(resultLeft).toBe(expectedLeft);
-        expect(resultRight).toBe(expectedRight);
-    });
-    
+		expect(resultLeft).toBe(expectedLeft);
+		expect(resultRight).toBe(expectedRight);
+	});
 
+	test('takes board array and returns null for a draw', () => {
+		// Arrange
+		const board = [
+			['X', '0', 'X'],
+			['0', '0', 'X'],
+			['X', 'X', '0'],
+		];
+		const expected = null;
+
+		// Act
+		const result = findWinner(board);
+
+		// Assert
+		expect(result).toBe(expected);
+	});
 });
