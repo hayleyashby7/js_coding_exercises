@@ -451,4 +451,16 @@ describe('areWeCovered', () => {
 		// Assert
 		expect(result).toThrow(expected);
 	});
+
+	test('returns false if staff is an empty array', () => {
+		// Arrange
+		const expected = false;
+		const staff = [];
+
+		// Act
+		const result = areWeCovered(staff, 'Monday');
+
+		// Assert
+		expect(result).toBe(expected);
+	});
 });
