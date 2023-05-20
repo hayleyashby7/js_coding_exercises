@@ -27,6 +27,7 @@ export const sumDigits = (n) => {
 export const createRange = (start, end, step = 1) => {
 	if (start === undefined) throw new Error('start is required');
 	if (end === undefined) throw new Error('end is required');
+	if(start > end) throw new Error('start must be less than end');
 
 	const range = [];
 
