@@ -168,4 +168,17 @@ describe('getComplementaryDNA', () => {
 		// Assert
 		expect(result).toBe(expected);
 	});
+
+	test('returns the complementary base pairs for DNA string with lower case characters', () => {
+		// Arrange
+		const expected = 'ATTAGTGCGCGCGTATTTAATCACGCGCGCATAATAATCACGCGCGCATAAATTAGTGCGCGCGTATT';
+
+		// Act
+		const result = getComplementaryDNA('taatcacgcgcgcataaattagtgcgcgcgtattattagtgcgcgcgtatttaatcacgcgcgcataa');
+
+		// Assert
+		expect(result).toBe(expected);
+
+
+	});
 });
