@@ -62,4 +62,16 @@ describe('sumDigits', () => {
         // Assert
         expect(result).toThrow(expected);        
     });
+
+    test('returns the number if a negative number is provided', () => {
+        // Arrange
+        const num = -123;
+        const expected = -123;
+
+        // Act
+        const result = sumDigits(num);
+
+        // Assert
+        expect(result).toBe(expected);
+    });
 });
