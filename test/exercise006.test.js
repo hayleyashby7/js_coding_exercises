@@ -193,3 +193,16 @@ describe('getComplementaryDNA', () => {
 		expect(result).toThrow(expected);
 	});
 });
+
+describe('isItPrime', () => {
+	test('returns true if the number is a prime number', () => {
+		// Arrange
+		const expected = true;
+
+		// Act
+		const result = isItPrime(3);
+
+		// Assert
+		expect(result).toBe(expected);
+	});
+});
