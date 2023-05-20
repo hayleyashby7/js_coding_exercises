@@ -264,3 +264,20 @@ describe('isItPrime', () => {
 		expect(result).toThrow(expected);
 	});
 });
+
+describe('createMatrix', () => {
+	test(' returns a matrix array of n * n populated with the value of fill', () => {
+		// Arrange
+		const expected = [
+			['foo', 'foo', 'foo'],
+			['foo', 'foo', 'foo'],
+			['foo', 'foo', 'foo'],
+		];
+
+		// Act
+		const result = createMatrix(3, 'foo');
+
+		// Assert
+		expect(result).toEqual(expected);
+	});
+});
