@@ -47,3 +47,16 @@ describe('sumMultiples', () => {
 		expect(result).toThrow(expected);
 	});
 });
+
+describe('isValidDNA', () => {
+	test('returns true if the string contains C, G, T or A only', () => {
+		// Arrange
+		const expected = true;
+
+		// Act
+		const result = isValidDNA('CGTA');
+
+		// Assert
+		expect(result).toBe(expected);
+	});
+});
