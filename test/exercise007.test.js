@@ -48,47 +48,59 @@ describe('sumDigits', () => {
 
 		// Assert
 		expect(result).toThrow(expected);
-    });
-    
-    test('throws an error if a non-number is provided', () => { 
-        // Arrange
-        const expected = 'n must be a number';
+	});
 
-        // Act
-        const result = () => {
-            sumDigits('123');
-        };
+	test('throws an error if a non-number is provided', () => {
+		// Arrange
+		const expected = 'n must be a number';
 
-        // Assert
-        expect(result).toThrow(expected);        
-    });
+		// Act
+		const result = () => {
+			sumDigits('123');
+		};
 
-    test('returns the number if a negative number is provided', () => {
-        // Arrange
-        const num = -123;
-        const expected = -123;
+		// Assert
+		expect(result).toThrow(expected);
+	});
 
-        // Act
-        const result = sumDigits(num);
+	test('returns the number if a negative number is provided', () => {
+		// Arrange
+		const num = -123;
+		const expected = -123;
 
-        // Assert
-        expect(result).toBe(expected);
-    });
+		// Act
+		const result = sumDigits(num);
+
+		// Assert
+		expect(result).toBe(expected);
+	});
 });
 
-describe('createRange', () => { 
-    test('takes start, end and step parameters and returns an array of numbers', () => { 
-        // Arrange
-        const start = 3;
-        const end = 11;
-        const step = 2;
-        const expected = [3, 5, 7, 9, 11];
+describe('createRange', () => {
+	test('takes start, end and step parameters and returns an array of numbers', () => {
+		// Arrange
+		const start = 3;
+		const end = 11;
+		const step = 2;
+		const expected = [3, 5, 7, 9, 11];
 
-        // Act
-        const result = createRange(start, end, step);
+		// Act
+		const result = createRange(start, end, step);
 
-        // Assert
-        expect(result).toEqual(expected);
-    });
-    
+		// Assert
+		expect(result).toEqual(expected);
+	});
+
+	test('defaults optional step parameter to 1', () => {
+		// Arrange
+		const start = 3;
+		const end = 11;
+		const expected = [3, 4, 5, 6, 7, 8, 9, 10, 11];
+
+		// Act
+		const result = createRange(start, end);
+
+		// Assert
+		expect(result).toEqual(expected);
+	});
 });
