@@ -328,4 +328,31 @@ describe('createMatrix', () => {
 		// Assert
 		expect(result).toEqual(expected);
 	});
+
+	test('returns a matrix array of n * n with fill being an array', () => {
+		// Arrange
+		const expected = [
+			[
+				['fizz', 'buzz'],
+				['fizz', 'buzz'],
+				['fizz', 'buzz'],
+			],
+			[
+				['fizz', 'buzz'],
+				['fizz', 'buzz'],
+				['fizz', 'buzz'],
+			],
+			[
+				['fizz', 'buzz'],
+				['fizz', 'buzz'],
+				['fizz', 'buzz'],
+			],
+		];
+
+		// Act
+		const result = createMatrix(3, ['fizz', 'buzz']);
+
+		// Assert
+		expect(result).toEqual(expected);
+	});
 });
