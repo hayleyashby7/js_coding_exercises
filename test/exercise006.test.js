@@ -178,7 +178,18 @@ describe('getComplementaryDNA', () => {
 
 		// Assert
 		expect(result).toBe(expected);
+	});
 
+	test('throws an error if str is not defined', () => {
+		// Arrange
+		const expected = 'str is required';
 
+		// Act
+		function result() {
+			getComplementaryDNA();
+		}
+
+		// Assert
+		expect(result).toThrow(expected);
 	});
 });
