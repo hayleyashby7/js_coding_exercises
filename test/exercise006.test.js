@@ -293,4 +293,17 @@ describe('createMatrix', () => {
 		// Assert
 		expect(result).toThrow(expected);
 	});
+
+	test('throws an error if fill is not defined', () => {
+		// Arrange
+		const expected = 'fill is required';
+
+		// Act
+		function result() {
+			createMatrix(6);
+		}
+
+		// Assert
+		expect(result).toThrow(expected);
+	});
 });
