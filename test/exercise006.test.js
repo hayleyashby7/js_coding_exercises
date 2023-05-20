@@ -85,4 +85,15 @@ describe('isValidDNA', () => {
 		// Assert
 		expect(result).toBe(expected);
 	});
+
+	test('returns false if the string contains any other characters', () => {
+		// Arrange
+		const expected = false;
+
+		// Act
+		const result = isValidDNA('CGTACGTAGATCCABCDEFGHIJKLMNOPQRSTUVWXYZGTACGTTGCAACGT');
+
+		// Assert
+		expect(result).toBe(expected);
+	});
 });
