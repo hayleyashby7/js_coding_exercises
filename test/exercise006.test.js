@@ -96,4 +96,15 @@ describe('isValidDNA', () => {
 		// Assert
 		expect(result).toBe(expected);
 	});
+
+	test('returns true if the string contains C, G, T or A in lower case', () => {
+		// Arrange
+		const expected = true;
+
+		// Act
+		const result = isValidDNA('cgat');
+
+		// Assert
+		expect(result).toBe(expected);
+	});
 });
