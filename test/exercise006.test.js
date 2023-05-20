@@ -405,7 +405,6 @@ describe('areWeCovered', () => {
 			{ name: 'Hayley', rota: ['Monday', 'Tuesday', 'Friday'] },
 			{ name: 'Felix', rota: ['Monday', 'Tuesday', 'Friday'] },
 			{ name: 'Alasdair', rota: ['Monday', 'Tuesday', 'Friday'] },
-			{ name: 'Matilda', rota: ['Monday', 'Tuesday', 'Friday', 'Saturday'] },
 		];
 
 		// Act
