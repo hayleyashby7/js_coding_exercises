@@ -382,17 +382,29 @@ describe('findWinner', () => {
 
 	test('takes board array and returns a diagonal winner', () => {
 		// Arrange
-		const board = [
+		const boardLeft = [
 			['X', '0', '0'],
 			['0', 'X', 'X'],
 			['0', null, 'X'],
 		];
-		const expected = 'X';
+        const expectedLeft = 'X';
+        
+        const boardRight = [
+            ['0', '0', 'X'],
+            ['0', 'X', 'X'],
+            ['X', null, '0'],
+        ];
+        const expectedRight = 'X';
+
 
 		// Act
-		const result = findWinner(board);
+        const resultLeft = findWinner(boardLeft);
+        const resultRight = findWinner(boardRight);
 
 		// Assert
-		expect(result).toBe(expected);
-	});
+        expect(resultLeft).toBe(expectedLeft);
+        expect(resultRight).toBe(expectedRight);
+    });
+    
+
 });
