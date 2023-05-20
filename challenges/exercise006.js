@@ -79,6 +79,13 @@ export const isItPrime = (n) => {
 export const createMatrix = (n, fill) => {
 	if (n === undefined) throw new Error('n is required');
 	if (fill === undefined) throw new Error('fill is required');
+
+	const matrix = [];
+	for (let i = 0; i < n; i++) {
+		matrix.push(new Array(n).fill(fill));
+	}
+
+	return matrix;
 };
 
 /**
