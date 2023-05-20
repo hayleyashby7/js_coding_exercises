@@ -24,7 +24,7 @@ export const sumMultiples = (arr) => {
 export const isValidDNA = (str) => {
 	if (str === undefined) throw new Error('str is required');
 
-	let DNA = ['C', 'G', 'T', 'A'];
+	const DNA = ['C', 'G', 'T', 'A'];
 	return [...str].every((char) => DNA.includes(char.toUpperCase()));
 };
 
@@ -35,6 +35,14 @@ export const isValidDNA = (str) => {
  */
 export const getComplementaryDNA = (str) => {
 	if (str === undefined) throw new Error('str is required');
+
+	const DNA = {
+		A: 'T',
+		T: 'A',
+		C: 'G',
+		G: 'C',
+	};
+	return [...str].map((char) => DNA[char.toUpperCase()]).join('');
 };
 
 /**
