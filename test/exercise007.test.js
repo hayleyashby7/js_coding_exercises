@@ -317,4 +317,16 @@ describe('hexToRGB', () => {
 		// Assert
 		expect(result).toThrow(expected);
 	});
+
+	test('returns an RGB colour code if a 3 digit hex colour code is provided', () => {
+		// Arrange
+		const hex = '#F13';
+		const expected = 'rgb(255,17,51)';
+
+		// Act
+		const result = hexToRGB(hex);
+
+		// Assert
+		expect(result).toBe(expected);
+	});
 });
