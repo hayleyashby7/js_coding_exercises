@@ -99,14 +99,15 @@ export const hexToRGB = (hexStr) => {
 	if (hexStr === undefined) throw new Error('hexStr is required');
 
 	const hexRegEx = /^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$/;
-
 	if (!hexRegEx.test(hexStr)) throw new Error('hexStr must be a valid hex colour code');
 
 	// Clean and slice hex to make it easier to work with
 	const hex = hexStr.replace('#', '');
-	const hexR = hex.slice(0, 2);
-	const hexG = hex.slice(2, 4);
-	const hexB = hex.slice(4, 6);
+
+	// Need to account for 3 or 6 digit hex codes
+	const hexR = hex.length === 3 ? hex.slice(0, 1).repeat(2) : hex.slice(0, 2);
+	const hexG = hex.length === 3 ? hex.slice(1, 2).repeat(2) : hex.slice(2, 4);
+	const hexB = hex.length === 3 ? hex.slice(2, 3).repeat(2) : hex.slice(4, 6);
 
 	const R = parseInt(hexR, 16);
 	const G = parseInt(hexG, 16);
