@@ -75,3 +75,19 @@ describe('sumDigits', () => {
         expect(result).toBe(expected);
     });
 });
+
+describe('createRange', () => { 
+    test('takes start, end and step parameters and returns an array of numbers', () => { 
+        // Arrange
+        const start = 3;
+        const end = 11;
+        const step = 2;
+        const expected = [3, 5, 7, 9, 11];
+
+        // Act
+        const result = createRange(start, end, step);
+
+        // Assert
+        expect(result).toEqual(expected);
+    });
+});
