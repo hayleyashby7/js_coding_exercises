@@ -226,4 +226,19 @@ describe('getScreentimeAlertList', () => {
 		// Assert
 		expect(result).toEqual(expected);
 	});
+
+	test('throws an error if no users are provided', () => {
+		// Arrange
+		const users = undefined;
+		const date = '2019-05-04';
+		const expected = 'users is required';
+
+		// Act
+		const result = () => {
+			getScreentimeAlertList(users, date);
+		};
+
+		// Assert
+		expect(result).toThrow(expected);
+	});
 });
