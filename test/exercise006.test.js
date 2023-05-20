@@ -306,4 +306,15 @@ describe('createMatrix', () => {
 		// Assert
 		expect(result).toThrow(expected);
 	});
+
+	test('returns a 1d array if n is 1', () => {
+		// Arrange
+		const expected = [['foo']];
+
+		// Act
+		const result = createMatrix(1, 'foo');
+
+		// Assert
+		expect(result).toEqual(expected);
+	});
 });
