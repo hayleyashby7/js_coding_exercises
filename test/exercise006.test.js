@@ -356,7 +356,7 @@ describe('createMatrix', () => {
 		expect(result).toEqual(expected);
 	});
 
-	test('returns a matrix array of n * n with fill being a number', () => { 
+	test('returns a matrix array of n * n with fill being a number', () => {
 		// Arrange
 		const expected = [
 			[1, 1, 1],
@@ -369,5 +369,30 @@ describe('createMatrix', () => {
 
 		// Assert
 		expect(result).toEqual(expected);
+	});
+});
+
+describe('areWeCovered', () => {
+	test('returns true if there are 3 or more staff scheduled to work on the given day', () => {
+		// Arrange
+		const expected = true;
+		const staff = [
+			{ name: 'Sally', rota: ['Monday', 'Tuesday', 'Friday'] },
+			{ name: 'Pedro', rota: ['Saturday', 'Sunday', 'Tuesday', 'Wednesday'] },
+			{ name: 'Hayley', rota: ['Monday', 'Tuesday', 'Friday'] },
+			{ name: 'Felix', rota: ['Monday', 'Tuesday', 'Friday'] },
+			{ name: 'Alasdair', rota: ['Monday', 'Tuesday', 'Friday'] },
+			{ name: 'Matilda', rota: ['Monday', 'Tuesday', 'Friday', 'Saturday'] },
+		];
+
+		// Act
+		const result0 = areWeCovered(staff, 'Monday');
+		const result1 = areWeCovered(staff, 'Tuesday');
+		const result2 = areWeCovered(staff, 'Friday');
+
+		// Assert
+		expect(result0).toBe(expected);
+		expect(result1).toBe(expected);
+		expect(result2).toBe(expected);
 	});
 });
