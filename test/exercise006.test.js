@@ -74,4 +74,15 @@ describe('isValidDNA', () => {
 		expect(reverseAlphabetical).toBe(expected);
 		expect(random).toBe(expected);
 	});
+
+	test('returns true if the string contains C, G, T or A multiple times', () => {
+		// Arrange
+		const expected = true;
+
+		// Act
+		const result = isValidDNA('CGTACGTAGATCCGTACGTTGCAACGT');
+
+		// Assert
+		expect(result).toBe(expected);
+	});
 });
