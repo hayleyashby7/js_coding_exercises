@@ -13,7 +13,7 @@ describe('colours', () => {
 	});
 });
 
-describe('shoppingList', () => {
+ describe('shoppingList', () => {
 	test('returns a list with an extra item', () => {
 		const list = [
 			'one apple',
