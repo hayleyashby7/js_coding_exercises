@@ -24,4 +24,16 @@ describe('sumDigits', () => {
 		// Assert
 		expect(result).toBe(expected);
 	});
+
+	test('takes a very large number and returns the sum of its digits', () => {
+		// Arrange
+		const num = 123456789;
+		const expected = 45;
+
+		// Act
+		const result = sumDigits(num);
+
+		// Assert
+		expect(result).toBe(expected);
+	});
 });
