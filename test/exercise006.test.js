@@ -317,4 +317,15 @@ describe('createMatrix', () => {
 		// Assert
 		expect(result).toEqual(expected);
 	});
+
+	test('returns a blank array if n is 0', () => {
+		// Arrange
+		const expected = [];
+
+		// Act
+		const result = createMatrix(0, 'foo');
+
+		// Assert
+		expect(result).toEqual(expected);
+	});
 });
