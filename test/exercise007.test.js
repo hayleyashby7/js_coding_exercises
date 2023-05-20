@@ -48,5 +48,18 @@ describe('sumDigits', () => {
 
 		// Assert
 		expect(result).toThrow(expected);
-	});
+    });
+    
+    test('throws an error if a non-number is provided', () => { 
+        // Arrange
+        const expected = 'n must be a number';
+
+        // Act
+        const result = () => {
+            sumDigits('123');
+        };
+
+        // Assert
+        expect(result).toThrow(expected);        
+    });
 });
