@@ -146,5 +146,15 @@ export const findWinner = (board) => {
 		if (columnWinner) return (winner = column[0]);
 	}
 
+	// Check left diagonal
+	const leftDiagonal = board.map((row, i) => row[i]);
+	const leftDiagonalWinner = leftDiagonal.every((cell) => cell === leftDiagonal[0]);
+	if (leftDiagonalWinner) return (winner = leftDiagonal[0]);
+
+	// Check right diagonal
+	const rightDiagonal = board.map((row, i) => row[dimensions - 1 - i]);
+	const rightDiagonalWinner = rightDiagonal.every((cell) => cell === rightDiagonal[0]);
+	if (rightDiagonalWinner) return (winner = rightDiagonal[0]);
+
 	return winner;
 };
