@@ -8,6 +8,8 @@
  */
 export const sumDigits = (n) => {
 	if (n === undefined) throw new Error('n is required');
+
+	return [...n.toString()].reduce((a, b) => parseInt(a) + parseInt(b));
 };
 
 /**
@@ -21,10 +23,7 @@ export const sumDigits = (n) => {
 export const createRange = (start, end, step) => {
 	if (start === undefined) throw new Error('start is required');
 	if (end === undefined) throw new Error('end is required');
-	if (step === undefined)
-		console.log(
-			"FYI: Optional step parameter not provided. Remove this check once you've handled the optional step!"
-		);
+	if (step === undefined) console.log("FYI: Optional step parameter not provided. Remove this check once you've handled the optional step!");
 };
 
 /**
