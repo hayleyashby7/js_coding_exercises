@@ -103,4 +103,19 @@ describe('createRange', () => {
 		// Assert
 		expect(result).toEqual(expected);
 	});
+
+	test('throws an error if no start parameter is provided', () => {
+		// Arrange
+		const start = undefined;
+		const end = 11;
+		const expected = 'start is required';
+
+		// Act
+		const result = () => {
+			createRange(start, end);
+		};
+
+		// Assert
+		expect(result).toThrow(expected);
+	});
 });
