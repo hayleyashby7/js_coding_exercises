@@ -118,4 +118,18 @@ describe('createRange', () => {
 		// Assert
 		expect(result).toThrow(expected);
 	});
+
+	test('throws an error if no end parameter is provided', () => {
+		// Arrange
+		const start = 3;
+		const expected = 'end is required';
+
+		// Act
+		const result = () => {
+			createRange(start);
+		};
+
+		// Assert
+		expect(result).toThrow(expected);
+	});
 });
