@@ -350,34 +350,52 @@ describe('findWinner', () => {
 
 	test('takes board array and returns a row winner', () => {
 		// Arrange
-		const board = [
+		const board1 = [
 			['X', 'X', 'X'],
 			['0', null, '0'],
 			['X', null, '0'],
 		];
-		const expected = 'X';
+		const expected1 = 'X';
+
+		const board2 = [
+			['X', null, 'X'],
+			['0', null, '0'],
+			['0', '0', '0'],
+		];
+		const expected2 = '0';
 
 		// Act
-		const result = findWinner(board);
+		const result1 = findWinner(board1);
+		const result2 = findWinner(board2);
 
 		// Assert
-		expect(result).toBe(expected);
+		expect(result1).toBe(expected1);
+		expect(result2).toBe(expected2);
 	});
 
 	test('takes board array and returns a column winner', () => {
 		// Arrange
-		const board = [
+		const board1 = [
 			['0', 'X', '0'],
 			['0', null, 'X'],
 			['0', null, 'X'],
 		];
-		const expected = '0';
+		const expected1 = '0';
+
+		const board2 = [
+			['0', '0', 'X'],
+			[null, null, 'X'],
+			['0', null, 'X'],
+		];
+		const expected2 = 'X';
 
 		// Act
-		const result = findWinner(board);
+		const result1 = findWinner(board1);
+		const result2 = findWinner(board2);
 
 		// Assert
-		expect(result).toBe(expected);
+		expect(result1).toBe(expected1);
+		expect(result2).toBe(expected2);
 	});
 
 	test('takes board array and returns a diagonal winner', () => {
